@@ -13,23 +13,24 @@ namespace CarLotSimulator
             //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
             //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
             //The methods should take one string parameter: the respective noise property
-            var carLot = new List<Car>();
 
-            //Now that the Car class is created we can instanciate 3 new cars
-            //Set the properties for each of the cars
-            //Call each of the methods for each car
-            var car1 = new Car();
+            var carLot = new CarLot();
+
+        //Now that the Car class is created we can instanciate 3 new cars
+        //Set the properties for each of the cars
+        //Call each of the methods for each car
+        var car1 = new Car();
             car1.Year = 2001;
             car1.Make = "Nissan";
             car1.Model = "Altima";
             car1.EngineNoise = "quiet";
             car1.HonkNoise = "whiney";
             car1.isDriveable = true;
-            carLot.Add(car1);
+            carLot.Cars.Add(car1);
+     
 
             var car2 = new Car() { Year = 2002, Make = "Chevy", Model = "Camaro", EngineNoise = "sexy", HonkNoise = "quiet", isDriveable = false } ;
-          
-            carLot.Add(car2);
+            carLot.Cars.Add(car2);
 
             var car3 = new Car()
             {
@@ -40,17 +41,18 @@ namespace CarLotSimulator
                 HonkNoise = "loud",
                 isDriveable = true
             };
-            carLot.Add(car3);
-           
+            carLot.Cars.Add(car3);
 
-            foreach (var item in carLot)
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
+            foreach (var item in carLot.Cars)
             {
                 item.MakeEngineNoise();
                 item.MakeHonkNoise();
             }
+            Console.WriteLine("");
             Console.WriteLine("Year Make Model");
             Console.WriteLine("---------------");
-            foreach (var item in carLot)
+            foreach (var item in carLot.Cars)
             {
                 Console.WriteLine($"{item.Year} {item.Make} {item.Model}");
             }

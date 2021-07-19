@@ -19,6 +19,10 @@ namespace CarLotSimulator
         {
             Console.WriteLine($"Your {Year} {Make} {Model} honk sound's {HonkNoise}");
         }
+        public Car()
+        {
+            CarLot.numberOfCars++;
+        }
     }
-
+    
 }
